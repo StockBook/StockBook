@@ -1,6 +1,6 @@
 const User = require('../../models/user');
 
-module.exports = function (app) {
+module.exports = function () {
     return function (req, res, next) {
         var user = new User();
         User.findOne({ email: req.body.email }, function (err, existingUser) {
