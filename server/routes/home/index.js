@@ -7,6 +7,7 @@ home.get('/home', function (req, res, next) {
 });
 
 home.get('/home/profile', profile.index());
+home.post('/home/profile/edit',profile.edit());
 
 
 module.exports = home;
