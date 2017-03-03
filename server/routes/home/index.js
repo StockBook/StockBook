@@ -1,12 +1,12 @@
 const home = require('express').Router();
 const message = require('../../controllers/message');
-const profileController = require('../../controllers/member/profile');
+const profile = require('../../controllers/member/profile');
 
 home.get('/home', function (req, res, next) {
-    res.json({ msg: 'home here' });
+    res.json({ msg: 'home' });
 });
 
-home.get('/home/profile', profileController.index());
+home.get('/home/profile', profile.index());
 
 
 module.exports = home;

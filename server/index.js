@@ -3,18 +3,37 @@ const
     app = express(),
     routes = require('./routes'),
     mongoose = require('mongoose'),
-    bodyParser = require('body-parser');
-    
+    bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    passport = require('passport'),
+    MongoStore = require('connect-mongo/es5')(session),
+    secret = require('./config/secret'),
+    logger = require('morgan'),
+    flash = require('express-flash');
+
+app.use(logger('dev'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cookieParser());
+app.use(session({
+    resave: true,
+    saveUninitialized: true,
+    secret: secret.key,
+    store: new MongoStore({ url: secret.db, autoReconnect: true })
+}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(function (req, res, next) {
+    res.locals.user = req.user;
+    next();
+});
 
-
-const secret = require('./config/secret'),
-    db = mongoose.connect(secret.db,function(err){
-        if(err) console.log(err);
-        console.log('Successful');
-    });
-
+db = mongoose.connect(secret.db, function (err) {
+    if (err) console.log(err);
+    console.log('Successful');
+});
 
 
 
@@ -29,4 +48,3 @@ app.use(routes);
 
 
 app.listen(3000);
-
