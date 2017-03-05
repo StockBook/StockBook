@@ -11,3 +11,7 @@ passport.deserializeUser(function (obj, done) {
     done(null, obj);
 });
 
+
+passport.use(new GoogleStrategy({
+    return
+}));
