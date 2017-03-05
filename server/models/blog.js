@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const BlogSchema = new Schema({
     title: { type: String, default: '' },
     content: String,
-    authpr: { type: String, default: '' },
+    author: String,
     created: Date,
 });
 module.exports = mongoose.model('BlogSchema', BlogSchema);

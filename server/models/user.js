@@ -9,9 +9,10 @@ var userSchema = new Schema({
 
   email: { type: String, unique: true, lowercase: true },
   password: String,
-
+  siteName: { type: String, unique: true },
   profile: {
-    name: { type: String, default: '' },
+    firstName: String,
+    lastName: String,
     picture: { type: String, default: '' }
   },
 

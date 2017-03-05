@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/onlinereadbook/readbookbackend#readme",
   "dependencies": {
+    "async": "^2.1.5",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.0",
     "connect-mongo": "^1.3.2",

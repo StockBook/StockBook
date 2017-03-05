@@ -1,5 +1,5 @@
 const User = require('../../models/user');
-module.exports.index = function () {
+module.exports.index = function (app) {
     return function (req, res, next) {
         if (!req.user) {
             res.json({ msg: '請先登入' });
@@ -13,7 +13,7 @@ module.exports.index = function () {
     }
 }
 
-module.exports.edit = function () {
+module.exports.update = function (app) {
     return function (req, res, next) {
         //TODO://利用遍歷來修改資料。
         User.findOne({ _id: req.user._id }, function (err, user) {
