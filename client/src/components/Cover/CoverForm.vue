@@ -11,7 +11,7 @@
 			</div>
             <div>
 		      <label for="lastName">
-		      	<span class="required">名稱</span> 
+		      	<span class="required">名字</span> 
 		      	<input type="text" id="name" name="lastName" value="" placeholder="Your Name" required="required" tabindex="1" autofocus="autofocus" />
 		      </label> 
 			</div>
