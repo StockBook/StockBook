@@ -1,5 +1,7 @@
 <template>
+    <div>
      <header class="video-background">
+        
             <nav>
                 <div class="row">
                     <img :src="logo" class="logo" alt="logo">
@@ -18,6 +20,8 @@
                 <a class="btn btn-ghost" href="">加入BETA測試</a>   
             </div>
         </header>
+        <v-section></v-section>
+    </div>
 </template>
 
 
@@ -62,17 +66,42 @@ header {
     transform: translate(-50%, -50%)
 }
 
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
 h1 {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
     color: #fff;
     font-size: 240%;
-    margin: 15px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
     word-spacing: 4px;
+    letter-spacing: 1px;
 }
 
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align:center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;    
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background: #e67e22;
+    content: " ";
+    width:100px;
+    margin:0 auto;
+    margin-top: 30px;
+}
 .btn:link,
 .btn:visited {
     display: inline-block;
@@ -149,26 +178,23 @@ h1 {
 .main-nav li a:active {
     border-bottom:2px solid #e67e22;
 }
+.video-background {
+    
+}
 </style>
 
 <script>
     import logo from '../../../static/img/logo-white.png'
-    
-    $(document).ready(function(){
-        $('header').tubular({videoId:'hE9kpH5aNSo'})
-    })
+    import vSection from './section.vue'
     export default{
         name:'v-cover',
+        components:{
+            vSection
+        },
         data () {
             return {
                 logo
             }    
         },
-        method:{
-            showVideo(){
-
-            }        
-        }
-
     }
 </script>
