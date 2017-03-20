@@ -1,203 +1,174 @@
 <template>
-
-  <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-            
-          <div class="inner cover">
-            <h1 class="cover-heading">WeiGoo股票系統</h1>
-            <p class="lead">想體會自動化選股票的魅力嗎？現在開始行動!</p>
-            <p class="lead">
-            </p>
-          </div>
-
-          <cover-form></cover-form>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>2017 WeiGoo股票系統 版權所有</a>.</p>
+     <header class="video-background">
+            <nav>
+                <div class="row">
+                    <img :src="logo" class="logo" alt="logo">
+                    <ul class="main-nav">
+                        <li><a href="#">首頁</a></li>
+                        <li><a href="#">最新課程</a></li>
+                        <li><a href="#">聯絡我們</a></li>
+                        <li><a href="#">登入</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="hero-text-box">
+                <h1>價值投資教練<br>超越大盤的獲利</h1>
+                <a class="btn btn-full" href="">免費訂閱我們</a>
+                <span style="color:white;margin:10px;">或</span>
+                <a class="btn btn-ghost" href="">加入BETA測試</a>   
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        </header>
 </template>
 
-<script>
-import CoverForm from './CoverForm'
-export default {
-  name: 'cover',
-  components:{
-      CoverForm
-  }
-}
-</script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
- /*
- * Globals
- */
-.container{
-    background:rgba(0,0,0,.1);
-}
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
-}
-
-
+    
 /*
- * Base structure
- */
+ BASIC SETUP
+*/
 
-html,
-body {
-  height: 100%;
-  background-color: #333;
-}
-body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
+html {
+    background: #fff;
+    color: #555;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
 }
 
-/* Padding for spacing */
-.inner {
-  padding: 30px;
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
-
-/*
- * Header
- */
-.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7));
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
 
-.masthead-nav > li {
-  display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
-  border-bottom: 2px solid transparent;
-}
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
 }
 
-@media (min-width: 768px) {
-  .masthead-brand {
+h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 240%;
+    margin: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    word-spacing: 4px;
+}
+
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn:hover,
+.btn:active {
+    background: #438edb;
+}
+
+.btn-full:link,
+.btn-full:visited {
+    border: 1px solid #e67e22;
+    background: #e67e22;
+    color: #fff;
+    margin-right: 7.5px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #7e88d7;
+    color: #fff;
+    margin-left:7.5px;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cf6d17;
+    color: #fff;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #7e88d7;
+    color: #fff;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
     float: left;
-  }
-  .masthead-nav {
+    margin-top: 20px;
+}
+
+.main-nav {
     float: right;
-  }
+    list-style: none;
+    margin-top: 60px;
 }
 
-
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 20px;
-}
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
+.main-nav li {
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 40px;
 }
 
-
-/*
- * Footer
- */
-
-.mastfoot {
-  color: #999; /* IE8 proofing */
-  color: rgba(255,255,255,.5);
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom:2px solid transparent;
+    transition: boder-bottom .2s;
+    font-size: 90%;
 }
 
-
-/*
- * Affix and center
- */
-
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 700px;
-  }
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom:2px solid #e67e22;
 }
 </style>
+
+<script>
+    import logo from '../../../static/img/logo-white.png'
+    
+    $(document).ready(function(){
+        $('header').tubular({videoId:'hE9kpH5aNSo'})
+    })
+    export default{
+        name:'v-cover',
+        data () {
+            return {
+                logo
+            }    
+        },
+        method:{
+            showVideo(){
+
+            }        
+        }
+
+    }
+</script>
