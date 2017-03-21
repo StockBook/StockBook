@@ -31,7 +31,7 @@
     </section>
 </template>
 
-<style>
+<style scoped>
     section {
         padding:80px 0;
     }
@@ -43,6 +43,7 @@
         line-height: 145%;
         width: 70%;
         margin-left: 15%;
+        margin-bottom: 30px;
     }
     .box p {
         font-size: 90%;
@@ -54,8 +55,11 @@
         font-size: 350%;
         
         display: block;
-        color: #e67e22;
+        color: #00a0e9;
         margin-bottom: 10px;
+    }
+    .icon-big:hover {
+        
     }
     /*------  Buttons  -------*/
 </style>

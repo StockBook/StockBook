@@ -21,6 +21,8 @@
             </div>
         </header>
         <v-section></v-section>
+        <v-section2></v-section2>
+        <v-section3></v-section3>
     </div>
 </template>
 
@@ -87,10 +89,12 @@ h2 {
     text-align:center;
     margin-bottom: 30px;
     letter-spacing: 1px;
+    color: #00a0e9;
 }
 h3{
     font-size: 110%;
-    margin-bottom: 15px;    
+    margin-bottom: 15px;
+    color: #00a0e9;   
 }
 
 h2:after {
@@ -186,10 +190,14 @@ h2:after {
 <script>
     import logo from '../../../static/img/logo-white.png'
     import vSection from './section.vue'
+    import vSection2 from './section2.vue'
+    import vSection3 from './section3.vue'
     export default{
         name:'v-cover',
         components:{
-            vSection
+            vSection,
+            vSection2,
+            vSection3
         },
         data () {
             return {
