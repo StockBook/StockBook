@@ -23,6 +23,7 @@
         <v-section></v-section>
         <v-section2></v-section2>
         <v-section3></v-section3>
+        <v-email></v-email>
     </div>
 </template>
 
@@ -192,17 +193,21 @@ h2:after {
     import vSection from './section.vue'
     import vSection2 from './section2.vue'
     import vSection3 from './section3.vue'
+    import vEmail from './email.vue'
     export default{
         name:'v-cover',
         components:{
             vSection,
             vSection2,
-            vSection3
+            vSection3,
+            vEmail
         },
         data () {
             return {
                 logo
             }    
         },
+        method: {   
+        }
     }
 </script>

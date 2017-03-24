@@ -1,7 +1,8 @@
 const Router = require('express').Router();
 const home = require('./home');
 const blog = require('./blog');
-const news = require('./news');
+// const news = require('./news');
+const videos = require('./videos');
 const signup = require('../controllers/member/signup');
 const login = require('../controllers/member/login');
 const passport = require('passport');
@@ -19,7 +20,8 @@ Router.post('/',passport.authenticate('local-login', {
 
 Router.use(home);
 Router.use(blog);
-Router.use(news);
+// Router.use(news);
+Router.use(videos);
 
 
 
