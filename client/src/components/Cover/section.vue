@@ -14,7 +14,7 @@
             </div>
             <div class="col span-1-of-4 box">
                 <i class="ion-ios-cart icon-big"></i>
-                <h3>詳細的價值投資教學</h3>
+                <h3>超完整的價值投資教學</h3>
                 <p>您可以隨時隨地收看我們的線上課程，掌握所有價值投資的訣竅，創造更好的獲利！</p>
             </div>
             <div class="col span-1-of-4 box">

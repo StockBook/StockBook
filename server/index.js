@@ -14,13 +14,18 @@ const
 
 app.use(logger('dev'));
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 app.use(cookieParser());
 app.use(session({
     resave: true,
     saveUninitialized: true,
     secret: secret.key,
-    store: new MongoStore({ url: secret.db, autoReconnect: true })
+    store: new MongoStore({
+        url: secret.db,
+        autoReconnect: true
+    })
 }));
 app.use(flash());
 app.use(passport.initialize());
@@ -47,4 +52,6 @@ app.use(function (req, res, next) {
 app.use(routes);
 
 
-app.listen(3000);
+app.listen(3000, function () {
+    console.log('port:3000');
+});

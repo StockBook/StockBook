@@ -8,5 +8,8 @@ var videoListSchema = new Schema({
     description: String,
     author: String,
     price: String,
+    image: String,
+    url: String,
+    category:{type: Schema.Types.ObjectId, ref:'videoCategory'}
 });
-module.exports = mongoose.model('videoListSchema', videoListSchema);
+module.exports = mongoose.model('videoList', videoListSchema);
